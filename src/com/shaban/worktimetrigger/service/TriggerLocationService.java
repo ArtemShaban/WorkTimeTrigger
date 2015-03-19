@@ -13,6 +13,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.shaban.worktimetrigger.R;
 import com.shaban.worktimetrigger.StartActivity;
 
 import java.util.Calendar;
@@ -126,7 +127,8 @@ public class TriggerLocationService extends Service implements LocationListener 
         Notification.Builder mBuilder =
                 new Notification.Builder(this)
                         .setContentTitle(action)
-                        .setContentText("We are " + action + " to/from work");
+                        .setContentText("We are " + action + " to/from work")
+                        .setSmallIcon(R.drawable.ic_launcher);
         Intent resultIntent = new Intent(this, StartActivity.class);
         resultIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent resultPendingIntent =
